@@ -1,5 +1,5 @@
 console.log("Hello there!");
-
+// requestURL + "?apikey=" + apiKey + "&s=" + input.value + "&r=json"
 const requestURL = 'http://www.omdbapi.com/?t=';
 const apiKey = '&apikey=ec3b0f3b';
 
@@ -7,6 +7,31 @@ const form = document.querySelector('#search')
 let p = document.createElement('p')
 let titleList = document.querySelector('#titleList');
 titleList.appendChild(p)
+
+// const btn = document.querySelector('#more-info')
+// let link = document.createElement('button')
+// let infoLink = document.querySelector('more-info')
+// infoLink.appendChild(link)
+
+// INFO BUTTON
+// function moreInf() {
+//     const link = document.querySelector('#more-info')
+//     let btn = document.createElement('button')
+//     btn.type = 'button'
+//     btn.innerHTML = 'MoreInfo'
+//     btn.className = 'btn-info'
+//     // btn.onclick = function(){
+//     //     let showInfo = document.querySelector('#show-info')
+//     //     let p = document.createElement('p')
+//     //     p.textContent = `${movieInfo.Title} ${movieInfo.Rated} ${movieInfo.Plot} ` 
+//     //     showInfo.appendChild(p)
+//     // };
+//     link.appendChild(btn)
+// }
+
+// moreInf()
+
+
 
 
 form.addEventListener("submit", (evt) => {
@@ -27,21 +52,19 @@ form.addEventListener("submit", (evt) => {
             // let movieInfo = parseData.Rated;
             let movieInfo = parseData;
             const ratedMsg =(movieInfo) =>{
-                if (movieInfo.Rated === "G" || "PG") {
-                    p.textContent = `${movieInfo.Title} movie is family friendly, it is rated: ${movieInfo.Rated}`
+                if (movieInfo.Rated === "G" || movieInfo.Rated === "PG") {
+                    p.textContent = `${movieInfo.Title} is family friendly, it is rated: ${movieInfo.Rated}`
                 } else if (movieInfo.Rated === "PG-13"){
-                    p.textContent = `This movie may require suppervion for younger kids, it is rated: ${movieInfo.Rated}`
+                    p.textContent = `${movieInfo.Title} may require suppervion for younger kids, it is rated: ${movieInfo.Rated}`
                 } else {
-                    p.textContent = `Save this movie for date night, it is rated: ${movieInfo.Rated}`
+                    p.textContent = `Save this movie for date night. ${movieInfo.Title} is rated: ${movieInfo.Rated}`
                
                 }
 
             }
             ratedMsg(movieInfo)
-            // for (let key in movieInfo){
-            //     console.log(`movieInfo.${key} = ${movieInfo[key]}`)
-            // }
-            // p.textContent = `${movieInfo}`
+            input.value = ''
+          
         })
 
         .catch((error) => {
@@ -49,6 +72,22 @@ form.addEventListener("submit", (evt) => {
         })
 
 })
+
+// BUTTON INFO
+// const link = document.querySelector('#more-info')
+//                     let btn = document.createElement('button')
+//                     btn.type = 'button'
+//                     btn.innerHTML = 'MoreInfo'
+//                     btn.className = 'btn-info'
+//                     btn.onclick = function(){
+//                         let showInfo = document.querySelector('#show-info')
+//                         let p = document.createElement('p')
+//                         p.textContent = `${movieInfo.Title} ${movieInfo.Rated} ${movieInfo.Plot} ` 
+//                         showInfo.appendChild(p)
+//                     };
+//                     link.appendChild(btn)
+
+
 
 
 
