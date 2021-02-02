@@ -8,6 +8,20 @@ let p = document.createElement('p')
 let titleList = document.querySelector('#titleList');
 titleList.appendChild(p)
 
+let showInfo = document.querySelector('#show-info')
+const link = document.querySelector('#more-info')
+let btn = document.createElement('button')
+btn.type = 'button'
+btn.innerHTML = 'More Info'
+btn.className = 'btn-info'
+
+// document.getElementById('reset-btn').onclick = function(){
+//     document.getElementById('main-container').innerHTML = ''
+// }
+// const resetBtn = document.querySelector('#reset-btn')
+// resetBtn.addEventListener("click", handleClick)
+  
+
 // const btn = document.querySelector('#more-info')
 // let link = document.createElement('button')
 // let infoLink = document.querySelector('more-info')
@@ -55,16 +69,60 @@ form.addEventListener("submit", (evt) => {
                 if (movieInfo.Rated === "G" || movieInfo.Rated === "PG") {
                     p.textContent = `${movieInfo.Title} is family friendly, it is rated: ${movieInfo.Rated}`
                 } else if (movieInfo.Rated === "PG-13"){
-                    p.textContent = `${movieInfo.Title} may require suppervion for younger kids, it is rated: ${movieInfo.Rated}`
+                    p.textContent = `${movieInfo.Title} may require supervision for younger kids, it is rated: ${movieInfo.Rated}`
                 } else {
                     p.textContent = `Save this movie for date night. ${movieInfo.Title} is rated: ${movieInfo.Rated}`
                
                 }
 
+                // BUTTON INFO
+                // const link = document.querySelector('#more-info')
+                //     let btn = document.createElement('button')
+                //     btn.type = 'button'
+                //     btn.innerHTML = 'More Info'
+                //     btn.className = 'btn-info'
+                    btn.onclick = function(){
+                        subset = (({
+                            Title, Year, Rated, Genre, Director, Actors, Plot, Poster 
+                        }) => ({Title, Year, Rated, Genre, Director, Actors, Plot, Poster })) (movieInfo)
+
+                        for (let key in subset){
+                            if (key === "Poster" && subset[key] !== "N/A" ) {
+                                element = document.createElement('img')
+                                element.setAttribute('src', subset[key])
+                                
+                            }else {
+                                element = document.createElement('p')
+                                element.textContent= (key + ": " + subset[key])
+                                
+                            }
+                            showInfo.append(element)
+                        }
+
+                        // for (let key in movieInfo){
+                            
+                        //     if (key === "Poster" && movieInfo[key] !== "N/A" ) {
+                        //         element = document.createElement('img')
+                        //         element.setAttribute('src', movieInfo[key])
+                                
+                        //     }else {
+                        //         element = document.createElement('p')
+                        //         element.textContent= (key + ": " + movieInfo[key])
+                                
+                        //     }
+                        //     showInfo.append(element)
+                        // }
+                        // let element = document.createElement('p')
+                        // p.textContent = `${movieInfo.Title} ${movieInfo.Rated} ${movieInfo.Plot} ` 
+                        // showInfo.appendChild(p)
+                    };
+                    link.appendChild(btn)
+
+
             }
             ratedMsg(movieInfo)
             input.value = ''
-          
+            
         })
 
         .catch((error) => {
@@ -72,6 +130,13 @@ form.addEventListener("submit", (evt) => {
         })
 
 })
+
+
+// function handleClick(e) {
+//     e.preventDefault()     
+//     document.getElementById("main-container").innerHTML = '';
+// }
+
 
 // BUTTON INFO
 // const link = document.querySelector('#more-info')
