@@ -1,7 +1,7 @@
 # Project 1 API Dashboard
 
 ## App name: Watchables
-[Mobile view](../img/watchables-api-dashboard.png)
+![Mobile view](./img/watchables-api-dashboard.png?raw=true )
 
 ## Technologies used:
 This app used the following:
@@ -18,7 +18,7 @@ The **main users** are busy parents that want to know if the movie they picked t
 - As a user, I would like to use this app on mobile devices.
 
 ## Wireframe
-[Low-fidelity] (../img/api-dashb-wireframe.png)
+![Low-fidelity] (../img/api-dashb-wireframe.png?raw=true)
 
 ## Major Hurdles / Unsolved Problems
 **Major Hurdles**
@@ -30,6 +30,7 @@ The **main users** are busy parents that want to know if the movie they picked t
     The second approach was taken because it is user centric.
 
 **Unsolved Problems**
+
  Ideally the “More Info” button should not duplicate the same information everytime is clicked, at the moment this happens if the user keeps clicking this button before checking for another movie and clicking the “Check it" (submit) button 
 
 
