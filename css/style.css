@@ -44,6 +44,14 @@ body{
 #submit-btn {
     background-color:rgb(241, 135, 1);
     color: white;
+    
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+        
+}
+#submit-btn:focus {
+    outline: none;
 }
 
 /* Display info */
@@ -73,7 +81,9 @@ body{
     color: white;
     border-radius: 10px;
 }
-
+button:focus {
+    outline: none;
+}
 #more-info {
     text-align: center;
     margin-top: 10px;
