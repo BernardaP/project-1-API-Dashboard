@@ -52,11 +52,11 @@ form.addEventListener("submit", (evt) => {
                     p.textContent = `${movieInfo.Error} Please check your spelling and try again.`
                 }
                 else if (movieInfo.Rated === "G" || movieInfo.Rated === "PG") {
-                    p.textContent = `${movieInfo.Title} is family friendly, it is rated: ${movieInfo.Rated}`
+                    p.textContent = `PERFECT FOR TONIGHT! ${movieInfo.Title.toUpperCase()} is family friendly, it is rated: ${movieInfo.Rated}`
                 } else if (movieInfo.Rated === "PG-13"){
-                    p.textContent = `${movieInfo.Title} may require supervision for younger kids, it is rated: ${movieInfo.Rated}`
+                    p.textContent = `${movieInfo.Title.toUpperCase()} may require supervision for young kids, it is rated: ${movieInfo.Rated}`
                 } else {
-                    p.textContent = `Save this movie for date night. ${movieInfo.Title} is rated: ${movieInfo.Rated}`
+                    p.textContent = `Save this movie for Date Night. ${movieInfo.Title.toUpperCase()} is rated: ${movieInfo.Rated}`
                
                 }
 
