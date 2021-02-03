@@ -18,7 +18,7 @@ The **main users** are busy parents that want to know if the movie they picked t
 - As a user, I would like to use this app on mobile devices.
 
 ## Wireframe
-![Low-fidelity] (../img/api-dashb-wireframe.png?raw=true)
+![Low-fidelity] (./img/api-dashb-wireframe.png?raw=true)
 
 ## Major Hurdles / Unsolved Problems
 **Major Hurdles**
