@@ -1,47 +1,39 @@
-console.log("Hello there!");
-// requestURL + "?apikey=" + apiKey + "&s=" + input.value + "&r=json"
+// Setting URL 
 const requestURL = 'http://www.omdbapi.com/?t=';
 const apiKey = '&apikey=ec3b0f3b';
 
+// Selecting html elements and creating tags
 const form = document.querySelector('#search')
-// let p = document.createElement('p')
-// let titleList = document.querySelector('#titleList');
-// titleList.appendChild(p)
 
 let showInfo = document.querySelector('#show-info')
 const link = document.querySelector('#more-info')
+// Adding the more info button
 let btn = document.createElement('button')
 btn.type = 'button'
 btn.innerHTML = 'More Info'
 btn.className = 'btn-info'
 
-// document.getElementById('reset-btn').onclick = function(){
-//     document.getElementById('main-container').innerHTML = ''
-// }
-
-// const resetBtn = document.querySelector('#reset-btn')
-
-
+// Attaching the event listener
 form.addEventListener("submit", (evt) => {
     evt.preventDefault()
 
+    // Reseting the main container by cleaning all the inner content
     document.getElementById("titleList").innerText = '';
     document.getElementById("more-info").innerText = '';
     document.getElementById("show-info").innerText = '';
 
+    // Selecting the element
     let input = document.querySelector('#title')
 
+    // Requesting API data via fetch
     fetch(requestURL + input.value + apiKey + "&r=json" )
    
-        .then(function(responseData) {
-           
+        .then(function(responseData) {           
             return responseData.json();
         })
         .then((parseData) => {
-            // test the response with console.log()
-            console.log("=======>", parseData);
-
-            // let movieInfo = parseData.Rated;
+            
+            // setting variable with the fetched data        
             let movieInfo = parseData;
             const ratedMsg =(movieInfo) =>{
                 document.getElementById('main-container').style.background ="rgb(241, 135, 1)";
@@ -56,8 +48,7 @@ form.addEventListener("submit", (evt) => {
                 } else if (movieInfo.Rated === "PG-13"){
                     p.textContent = `${movieInfo.Title.toUpperCase()} may require supervision for young kids, it is rated: ${movieInfo.Rated}`
                 } else {
-                    p.textContent = `Save this movie for Date Night. ${movieInfo.Title.toUpperCase()} is rated: ${movieInfo.Rated}`
-               
+                    p.textContent = `Save this movie for Date Night. ${movieInfo.Title.toUpperCase()} is rated: ${movieInfo.Rated}`               
                 }
 
                 btn.onclick = function(){
@@ -72,82 +63,22 @@ form.addEventListener("submit", (evt) => {
                             
                         }else {
                             element = document.createElement('p')
-                            element.textContent= (key + ": " + subset[key])
-                            
+                            element.textContent= (key + ": " + subset[key])                         
                         }
                         showInfo.append(element)
-                    }
-
-                    
+                    }                    
                 };
                 link.appendChild(btn)
-
-
             }
             ratedMsg(movieInfo)
-            input.value = ''
-            
+            input.value = ''            
         })
-
         .catch((error) => {
             console.error("ERROR: ", error)
         })
-
 })
 
 
-// function handleClick(e) {
-//     e.preventDefault()     
-//     document.getElementById("titleList").innerText = '';
-//     document.getElementById("more-info").innerText = '';
-//     document.getElementById("show-info").innerText = '';
-//     console.log('click')
-// }
-
-// resetBtn.addEventListener("click", handleClick)
-// BUTTON INFO
-// const link = document.querySelector('#more-info')
-//                     let btn = document.createElement('button')
-//                     btn.type = 'button'
-//                     btn.innerHTML = 'MoreInfo'
-//                     btn.className = 'btn-info'
-//                     btn.onclick = function(){
-//                         let showInfo = document.querySelector('#show-info')
-//                         let p = document.createElement('p')
-//                         p.textContent = `${movieInfo.Title} ${movieInfo.Rated} ${movieInfo.Plot} ` 
-//                         showInfo.appendChild(p)
-//                     };
-//                     link.appendChild(btn)
-
-
-
-
-// const resetBtn = document.querySelector('#reset-btn')
-// resetBtn.addEventListener("click", handleClick)
-  
-
-// const btn = document.querySelector('#more-info')
-// let link = document.createElement('button')
-// let infoLink = document.querySelector('more-info')
-// infoLink.appendChild(link)
-
-// INFO BUTTON
-// function moreInf() {
-//     const link = document.querySelector('#more-info')
-//     let btn = document.createElement('button')
-//     btn.type = 'button'
-//     btn.innerHTML = 'MoreInfo'
-//     btn.className = 'btn-info'
-//     // btn.onclick = function(){
-//     //     let showInfo = document.querySelector('#show-info')
-//     //     let p = document.createElement('p')
-//     //     p.textContent = `${movieInfo.Title} ${movieInfo.Rated} ${movieInfo.Plot} ` 
-//     //     showInfo.appendChild(p)
-//     // };
-//     link.appendChild(btn)
-// }
-
-// moreInf()
 
 
 
