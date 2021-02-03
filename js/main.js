@@ -19,11 +19,15 @@ btn.className = 'btn-info'
 //     document.getElementById('main-container').innerHTML = ''
 // }
 
-const resetBtn = document.querySelector('#reset-btn')
+// const resetBtn = document.querySelector('#reset-btn')
 
 
 form.addEventListener("submit", (evt) => {
     evt.preventDefault()
+
+    document.getElementById("titleList").innerText = '';
+    document.getElementById("more-info").innerText = '';
+    document.getElementById("show-info").innerText = '';
 
     let input = document.querySelector('#title')
 
@@ -43,8 +47,10 @@ form.addEventListener("submit", (evt) => {
                 let p = document.createElement('p')
                 let titleList = document.querySelector('#titleList');
                 titleList.appendChild(p)
-                
-                if (movieInfo.Rated === "G" || movieInfo.Rated === "PG") {
+                if (movieInfo.Response === "False"){
+                    p.textContent = `${movieInfo.Error} Please check your spelling and try again.`
+                }
+                else if (movieInfo.Rated === "G" || movieInfo.Rated === "PG") {
                     p.textContent = `${movieInfo.Title} is family friendly, it is rated: ${movieInfo.Rated}`
                 } else if (movieInfo.Rated === "PG-13"){
                     p.textContent = `${movieInfo.Title} may require supervision for younger kids, it is rated: ${movieInfo.Rated}`
@@ -89,15 +95,15 @@ form.addEventListener("submit", (evt) => {
 })
 
 
-function handleClick(e) {
-    e.preventDefault()     
-    document.getElementById("titleList").innerText = '';
-    document.getElementById("more-info").innerText = '';
-    document.getElementById("show-info").innerText = '';
-    console.log('click')
-}
+// function handleClick(e) {
+//     e.preventDefault()     
+//     document.getElementById("titleList").innerText = '';
+//     document.getElementById("more-info").innerText = '';
+//     document.getElementById("show-info").innerText = '';
+//     console.log('click')
+// }
 
-resetBtn.addEventListener("click", handleClick)
+// resetBtn.addEventListener("click", handleClick)
 // BUTTON INFO
 // const link = document.querySelector('#more-info')
 //                     let btn = document.createElement('button')
