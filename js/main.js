@@ -1,5 +1,5 @@
 // Setting URL 
-const requestURL = 'http://www.omdbapi.com/?t=';
+const requestURL = 'https://www.omdbapi.com/?t=';
 const apiKey = '&apikey=ec3b0f3b';
 
 // Selecting html elements and creating tags
