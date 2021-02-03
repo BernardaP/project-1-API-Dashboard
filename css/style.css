@@ -36,10 +36,14 @@ body{
     font-size: 15px;
 }
 /* Form */
+#search-form{
+    margin: 20px 0px;
+}
 .form-inputs {
     border: none;
     padding: 10px;
     border-radius: 5px;
+    font-size: 16px;
 }
 #submit-btn {
     background-color:rgb(241, 135, 1);
