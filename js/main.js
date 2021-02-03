@@ -44,6 +44,7 @@ form.addEventListener("submit", (evt) => {
             // let movieInfo = parseData.Rated;
             let movieInfo = parseData;
             const ratedMsg =(movieInfo) =>{
+                document.getElementById('main-container').style.background ="rgb(241, 135, 1)";
                 let p = document.createElement('p')
                 let titleList = document.querySelector('#titleList');
                 titleList.appendChild(p)
