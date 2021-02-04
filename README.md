@@ -1,4 +1,6 @@
-# Project 1 API Dashboard
+# API Dashboard Project 
+
+This is a movie rated search app created with Javascript that fetches information from a public movies API
 
 ## App name: Watchables
 ![Mobile view](./img/watchables-api-dashboard.png?raw=true )
