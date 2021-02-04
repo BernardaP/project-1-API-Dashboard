@@ -52,6 +52,7 @@ form.addEventListener("submit", (evt) => {
                 }
 
                 btn.onclick = function(){
+                    document.getElementById("show-info").innerText = '';
                     subset = (({
                         Title, Year, Rated, Genre, Director, Actors, Plot, Poster 
                     }) => ({Title, Year, Rated, Genre, Director, Actors, Plot, Poster })) (movieInfo)

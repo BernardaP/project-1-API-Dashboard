@@ -9,15 +9,14 @@ body{
     align-items: center;
     display: flex;
     flex-direction: column;
-    font-family: 'Comfortaa', cursive;
-   
+    font-family: 'Comfortaa', cursive;   
     justify-content: space-around;
     margin: 0;
 }
+/* Header section */
 .banner {
     margin: 30px 0px 13px 0px;
-    text-align: center;
-    
+    text-align: center;    
 }
 .banner h1 {
     text-transform: uppercase;
@@ -35,7 +34,7 @@ body{
     padding: 10px 20px;
     font-size: 15px;
 }
-/* Form */
+/* Form section */
 #search-form{
     margin: 20px 0px;
 }
@@ -48,19 +47,16 @@ body{
 #submit-btn {
     background-color:rgb(241, 135, 1);
     color: white;
-    
     -webkit-appearance: none;
     -moz-appearance: none;
-    appearance: none;
-        
+    appearance: none;        
 }
 #submit-btn:focus {
     outline: none;
 }
 
-/* Display info */
+/* Display info section */
 #main-container{
-    /* margin: 30px 0px 0px 0px; */
     margin: 0px;
     margin-top: 30px;
     display: flex;
@@ -68,14 +64,14 @@ body{
 }
 #titleList {
     font-size: 16px;
-    text-align: center;
-    /* color: rgb(90, 50, 0); */
+    text-align: center;    
     margin: 10px 10px;
     padding: 10px 20px;
     line-height: 20px;
 }
 #titleList p {
     padding: 0px 20px 0px 20px;
+    font-kerning: none;
 }
 .btn-info {
     padding: 10px 20px;
@@ -87,6 +83,8 @@ body{
 }
 button:focus {
     outline: none;
+    opacity: 0.7;
+    cursor: not-allowed;
 }
 #more-info {
     text-align: center;
@@ -100,13 +98,10 @@ button:focus {
     padding-right: 30px; */
     text-align: center;
     font-size: 15px;
-    color: rgb(90, 50, 0);
-    /* line-height: 25px; */
+    color: rgb(90, 50, 0);    
 }
 #show-info p {
-    padding: 10px 20px;
-    /* padding-top: 10px;
-    padding-bottom: 10px; */
+    padding: 10px 20px;    
 }
 #show-info img {
     margin-top: 25px;
