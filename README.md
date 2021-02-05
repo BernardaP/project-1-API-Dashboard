@@ -7,6 +7,7 @@ This is a movie rated search app created with Javascript that fetches informatio
 
 ## Technologies used:
 This app used the following:
+- OMDB API: Open Movie Database API 
 - JavaScript
 - HTML
 - CSS
